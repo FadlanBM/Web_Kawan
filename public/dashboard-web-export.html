@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      tailwind = { config: { corePlugins: { preflight: false } } };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans%3Awght%40200..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *, ::before, ::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      data-pencil-id="uIkFu"
+      data-pencil-name="Dashboard Web"
+      class="box-border w-[1200px] h-[800px] flex flex-row gap-0 justify-start items-start bg-[#F8F4EF] overflow-hidden"
+    >
+      <div
+        data-pencil-id="y9RwL"
+        data-pencil-name="DW Sidebar"
+        class="box-border w-[240px] shrink-0 h-[800px] flex flex-col gap-[32px] p-[32px] justify-start items-start bg-[#3D3A38]"
+      >
+        <div
+          data-pencil-id="n2niM"
+          data-pencil-name="DW Logo"
+          class="box-border w-fit h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center"
+        >
+          <div
+            data-pencil-id="SfLgd"
+            data-pencil-name="DW Logo Star"
+            class="text-[20px]/[normal] box-border text-[#7EC8A4] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+          >
+            🌟
+          </div>
+          <div
+            data-pencil-id="E9dhr"
+            data-pencil-name="DW Logo Txt"
+            class="text-[18px]/[normal] box-border text-[#FFFFFF] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-extrabold text-left [white-space:nowrap]"
+          >
+            KAWAN
+          </div>
+        </div>
+        <div
+          data-pencil-id="aZhzC"
+          data-pencil-name="DW Nav"
+          class="box-border w-[200px] h-fit shrink-0 flex flex-col gap-[4px] justify-start items-start"
+        >
+          <div
+            data-pencil-id="hO4Gl"
+            data-pencil-name="DW Nav 0"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-0 p-[12px] justify-start items-center bg-[#FFFFFF15] rounded-[8px]"
+          >
+            <div
+              data-pencil-id="KdmuV"
+              data-pencil-name="DW Nav 0 L"
+              class="text-[14px]/[normal] box-border text-[#FFFFFF] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+            >
+              📊 Dashboard
+            </div>
+          </div>
+          <div
+            data-pencil-id="qkBI7"
+            data-pencil-name="DW Nav 1"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-0 p-[12px] justify-start items-center rounded-[8px]"
+          >
+            <div
+              data-pencil-id="FywRa"
+              data-pencil-name="DW Nav 1 L"
+              class="text-[14px]/[normal] box-border text-[#FFFFFF60] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+            >
+              👥 Profil Siswa
+            </div>
+          </div>
+          <div
+            data-pencil-id="AQyJE"
+            data-pencil-name="DW Nav 2"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-0 p-[12px] justify-start items-center rounded-[8px]"
+          >
+            <div
+              data-pencil-id="g42RO8"
+              data-pencil-name="DW Nav 2 L"
+              class="text-[14px]/[normal] box-border text-[#FFFFFF60] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+            >
+              📋 Placement Gate
+            </div>
+          </div>
+          <div
+            data-pencil-id="h1oXm"
+            data-pencil-name="DW Nav 3"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-0 p-[12px] justify-start items-center rounded-[8px]"
+          >
+            <div
+              data-pencil-id="D6aFo"
+              data-pencil-name="DW Nav 3 L"
+              class="text-[14px]/[normal] box-border text-[#FFFFFF60] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+            >
+              📈 Laporan
+            </div>
+          </div>
+          <div
+            data-pencil-id="yhNUQ"
+            data-pencil-name="DW Nav 4"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-0 p-[12px] justify-start items-center rounded-[8px]"
+          >
+            <div
+              data-pencil-id="ixyI6"
+              data-pencil-name="DW Nav 4 L"
+              class="text-[14px]/[normal] box-border text-[#FFFFFF60] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+            >
+              ⚙️ Pengaturan
+            </div>
+          </div>
+        </div>
+        <div
+          data-pencil-id="QPdpk"
+          data-pencil-name="DW Nav Sep"
+          class="box-border w-full h-[1px] shrink-0 flex flex-row gap-0 justify-start items-start bg-[#FFFFFF15]"
+        ></div>
+        <div
+          data-pencil-id="zcWVb"
+          data-pencil-name="DW Logout"
+          class="text-[14px]/[normal] box-border text-[#FFFFFF40] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+        >
+          🚪 Keluar
+        </div>
+      </div>
+      <div
+        data-pencil-id="fWLJb"
+        data-pencil-name="DW Main"
+        class="box-border [flex:1_1_0] h-fit flex flex-col gap-[32px] p-[32px] justify-start items-start bg-[#F8F4EF]"
+      >
+        <div
+          data-pencil-id="QwrDZ"
+          data-pencil-name="DW Top"
+          class="box-border w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-center"
+        >
+          <div
+            data-pencil-id="RCFQh"
+            data-pencil-name="DW Hello"
+            class="text-[24px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-extrabold text-left [white-space:nowrap]"
+          >
+            Selamat datang, Bu Dewi 👋
+          </div>
+          <div
+            data-pencil-id="Y6rRIy"
+            data-pencil-name="DW Top Right"
+            class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+          >
+            <div
+              data-pencil-id="bBZwx"
+              data-pencil-name="DW Notif"
+              class="box-border w-[40px] shrink-0 h-[40px] flex flex-row gap-0 justify-center items-center bg-[#FFFFFF] rounded-[100px]"
+            ></div>
+            <div
+              data-pencil-id="e3MQO"
+              data-pencil-name="DW Notif Icon"
+              class="text-[18px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+            >
+              🔔
+            </div>
+            <div
+              data-pencil-id="SupSn"
+              data-pencil-name="DW Avatar"
+              class="box-border w-[40px] shrink-0 h-[40px] flex flex-row gap-0 justify-center items-center bg-[#7EC8A4] rounded-[100px]"
+            ></div>
+            <div
+              data-pencil-id="iVo01"
+              data-pencil-name="DW Av Init"
+              class="text-[16px]/[normal] box-border text-[#FFFFFF] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-bold text-left [white-space:nowrap]"
+            >
+              BD
+            </div>
+          </div>
+        </div>
+        <div
+          data-pencil-id="PA0Wd"
+          data-pencil-name="DW Cards"
+          class="box-border w-full h-fit shrink-0 flex flex-row gap-[20px] justify-start items-start"
+        >
+          <div
+            data-pencil-id="YbiLX"
+            data-pencil-name="DWC 0"
+            class="box-border [flex:1_1_0] h-fit flex flex-row gap-0 p-[20px] justify-between items-center bg-[#FFFFFF] rounded-[20px]"
+          >
+            <div
+              data-pencil-id="WoLCz"
+              data-pencil-name="DWC 0 L"
+              class="box-border w-fit shrink-0 h-fit flex flex-col gap-[4px] justify-start items-start"
+            >
+              <div
+                data-pencil-id="dE1Mf"
+                data-pencil-name="DWC 0 LL"
+                class="text-[12px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Total Siswa
+              </div>
+              <div
+                data-pencil-id="YJu3z"
+                data-pencil-name="DWC 0 LV"
+                class="text-[28px]/[normal] box-border text-[#7EC8A4] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-extrabold text-left [white-space:nowrap]"
+              >
+                12
+              </div>
+            </div>
+            <div
+              data-pencil-id="MzbXc"
+              data-pencil-name="DWC 0 I"
+              class="text-[28px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+            >
+              👥
+            </div>
+          </div>
+          <div
+            data-pencil-id="WywYg"
+            data-pencil-name="DWC 1"
+            class="box-border [flex:1_1_0] h-fit flex flex-row gap-0 p-[20px] justify-between items-center bg-[#FFFFFF] rounded-[20px]"
+          >
+            <div
+              data-pencil-id="VJiB2"
+              data-pencil-name="DWC 1 L"
+              class="box-border w-fit shrink-0 h-fit flex flex-col gap-[4px] justify-start items-start"
+            >
+              <div
+                data-pencil-id="YcfKw"
+                data-pencil-name="DWC 1 LL"
+                class="text-[12px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Sesi Hari Ini
+              </div>
+              <div
+                data-pencil-id="yQW2J"
+                data-pencil-name="DWC 1 LV"
+                class="text-[28px]/[normal] box-border text-[#B8A9D9] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-extrabold text-left [white-space:nowrap]"
+              >
+                8
+              </div>
+            </div>
+            <div
+              data-pencil-id="q1EsC"
+              data-pencil-name="DWC 1 I"
+              class="text-[28px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+            >
+              🎮
+            </div>
+          </div>
+          <div
+            data-pencil-id="yohGg"
+            data-pencil-name="DWC 2"
+            class="box-border [flex:1_1_0] h-fit flex flex-row gap-0 p-[20px] justify-between items-center bg-[#FFFFFF] rounded-[20px]"
+          >
+            <div
+              data-pencil-id="hc4tc"
+              data-pencil-name="DWC 2 L"
+              class="box-border w-fit shrink-0 h-fit flex flex-col gap-[4px] justify-start items-start"
+            >
+              <div
+                data-pencil-id="dwPYc"
+                data-pencil-name="DWC 2 LL"
+                class="text-[12px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Rata-rata Skor
+              </div>
+              <div
+                data-pencil-id="N5yPAj"
+                data-pencil-name="DWC 2 LV"
+                class="text-[28px]/[normal] box-border text-[#FFD166] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-extrabold text-left [white-space:nowrap]"
+              >
+                87%
+              </div>
+            </div>
+            <div
+              data-pencil-id="X6R4Y"
+              data-pencil-name="DWC 2 I"
+              class="text-[28px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+            >
+              ⭐
+            </div>
+          </div>
+          <div
+            data-pencil-id="f67XJK"
+            data-pencil-name="DWC 3"
+            class="box-border [flex:1_1_0] h-fit flex flex-row gap-0 p-[20px] justify-between items-center bg-[#FFFFFF] rounded-[20px]"
+          >
+            <div
+              data-pencil-id="z3lopP"
+              data-pencil-name="DWC 3 L"
+              class="box-border w-fit shrink-0 h-fit flex flex-col gap-[4px] justify-start items-start"
+            >
+              <div
+                data-pencil-id="ZAnjF"
+                data-pencil-name="DWC 3 LL"
+                class="text-[12px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Butuh Perhatian
+              </div>
+              <div
+                data-pencil-id="V45Qf"
+                data-pencil-name="DWC 3 LV"
+                class="text-[28px]/[normal] box-border text-[#F4A261] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-extrabold text-left [white-space:nowrap]"
+              >
+                2
+              </div>
+            </div>
+            <div
+              data-pencil-id="lXiw4"
+              data-pencil-name="DWC 3 I"
+              class="text-[28px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+            >
+              ⚠️
+            </div>
+          </div>
+        </div>
+        <div
+          data-pencil-id="J3RLsD"
+          data-pencil-name="DW Bottom"
+          class="box-border w-full h-fit shrink-0 flex flex-row gap-[20px] justify-start items-start"
+        >
+          <div
+            data-pencil-id="fxtgN"
+            data-pencil-name="DW Table"
+            class="box-border [flex:1_1_0] h-fit flex flex-col gap-[12px] p-[20px] justify-start items-start bg-[#FFFFFF] rounded-[20px]"
+          >
+            <div
+              data-pencil-id="huklb"
+              data-pencil-name="DW TH"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-0 justify-between items-start"
+            >
+              <div
+                data-pencil-id="mHfQU"
+                data-pencil-name="DW TH T"
+                class="text-[16px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-bold text-left [white-space:nowrap]"
+              >
+                Daftar Siswa
+              </div>
+              <div
+                data-pencil-id="B6VSB"
+                data-pencil-name="DW TH V"
+                class="text-[13px]/[normal] box-border text-[#7EC8A4] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Lihat Semua →
+              </div>
+            </div>
+            <div
+              data-pencil-id="eDtnm"
+              data-pencil-name="DW SR 0"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-0 p-[12px] justify-between items-center"
+            >
+              <div
+                data-pencil-id="Z4rYY"
+                data-pencil-name="DW SR 0 N"
+                class="text-[14px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+              >
+                Bima
+              </div>
+              <div
+                data-pencil-id="GYjxm"
+                data-pencil-name="DW SR 0 P"
+                class="text-[12px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Pemula
+              </div>
+              <div
+                data-pencil-id="OXaDA"
+                data-pencil-name="DW SR 0 S"
+                class="text-[14px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+              >
+                ⭐⭐⭐
+              </div>
+              <div
+                data-pencil-id="H9srRN"
+                data-pencil-name="DW SR 0 D"
+                class="box-border w-[12px] shrink-0 h-[12px] flex flex-row gap-0 justify-start items-start bg-[#7EC8A4] rounded-[100px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-id="jRX0r"
+              data-pencil-name="DW SR 1"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-0 p-[12px] justify-between items-center"
+            >
+              <div
+                data-pencil-id="Saf8b"
+                data-pencil-name="DW SR 1 N"
+                class="text-[14px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+              >
+                Sari
+              </div>
+              <div
+                data-pencil-id="XxgDF"
+                data-pencil-name="DW SR 1 P"
+                class="text-[12px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Lanjutan
+              </div>
+              <div
+                data-pencil-id="vh5Wv"
+                data-pencil-name="DW SR 1 S"
+                class="text-[14px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+              >
+                ⭐⭐
+              </div>
+              <div
+                data-pencil-id="J8fne"
+                data-pencil-name="DW SR 1 D"
+                class="box-border w-[12px] shrink-0 h-[12px] flex flex-row gap-0 justify-start items-start bg-[#FFD166] rounded-[100px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-id="gnYuA"
+              data-pencil-name="DW SR 2"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-0 p-[12px] justify-between items-center"
+            >
+              <div
+                data-pencil-id="GKPMT"
+                data-pencil-name="DW SR 2 N"
+                class="text-[14px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+              >
+                Raka
+              </div>
+              <div
+                data-pencil-id="Tjjyn"
+                data-pencil-name="DW SR 2 P"
+                class="text-[12px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Pemula
+              </div>
+              <div
+                data-pencil-id="ziibZ"
+                data-pencil-name="DW SR 2 S"
+                class="text-[14px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+              >
+                ⭐⭐⭐
+              </div>
+              <div
+                data-pencil-id="uuzVz"
+                data-pencil-name="DW SR 2 D"
+                class="box-border w-[12px] shrink-0 h-[12px] flex flex-row gap-0 justify-start items-start bg-[#7EC8A4] rounded-[100px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-id="Nyy8n"
+              data-pencil-name="DW SR 3"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-0 p-[12px] justify-between items-center"
+            >
+              <div
+                data-pencil-id="YNSjt"
+                data-pencil-name="DW SR 3 N"
+                class="text-[14px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+              >
+                Dinda
+              </div>
+              <div
+                data-pencil-id="XTTLQ"
+                data-pencil-name="DW SR 3 P"
+                class="text-[12px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Lanjutan
+              </div>
+              <div
+                data-pencil-id="I95DG"
+                data-pencil-name="DW SR 3 S"
+                class="text-[14px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+              >
+                ⭐
+              </div>
+              <div
+                data-pencil-id="XIBy2"
+                data-pencil-name="DW SR 3 D"
+                class="box-border w-[12px] shrink-0 h-[12px] flex flex-row gap-0 justify-start items-start bg-[#F4A261] rounded-[100px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-id="b4mPg"
+              data-pencil-name="DW SR 4"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-0 p-[12px] justify-between items-center"
+            >
+              <div
+                data-pencil-id="EPymG"
+                data-pencil-name="DW SR 4 N"
+                class="text-[14px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+              >
+                Arif
+              </div>
+              <div
+                data-pencil-id="k7wdd"
+                data-pencil-name="DW SR 4 P"
+                class="text-[12px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Pemula
+              </div>
+              <div
+                data-pencil-id="g5PbE0"
+                data-pencil-name="DW SR 4 S"
+                class="text-[14px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-left [white-space:nowrap]"
+              >
+                ⭐⭐⭐
+              </div>
+              <div
+                data-pencil-id="I7IE8"
+                data-pencil-name="DW SR 4 D"
+                class="box-border w-[12px] shrink-0 h-[12px] flex flex-row gap-0 justify-start items-start bg-[#7EC8A4] rounded-[100px]"
+              ></div>
+            </div>
+          </div>
+          <div
+            data-pencil-id="T4OPsj"
+            data-pencil-name="DW Chart"
+            class="box-border w-[320px] shrink-0 h-fit flex flex-col gap-[12px] p-[20px] justify-start items-start bg-[#FFFFFF] rounded-[20px]"
+          >
+            <div
+              data-pencil-id="yY1vC"
+              data-pencil-name="DW CT"
+              class="text-[16px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-bold text-left [white-space:nowrap]"
+            >
+              Progress Quest
+            </div>
+            <div
+              data-pencil-id="HjZIm"
+              data-pencil-name="DW Bar 0"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center"
+            >
+              <div
+                data-pencil-id="e7fkYa"
+                data-pencil-name="DW Bar 0 L"
+                class="text-[11px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Bima
+              </div>
+              <div
+                data-pencil-id="pHo1n"
+                data-pencil-name="DW Bar 0 B"
+                class="box-border w-[85px] shrink-0 h-[16px] bg-[#7EC8A4] rounded-[8px]"
+              ></div>
+              <div
+                data-pencil-id="gKCSp"
+                data-pencil-name="DW Bar 0 V"
+                class="text-[11px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+              >
+                85%
+              </div>
+            </div>
+            <div
+              data-pencil-id="U2teW5"
+              data-pencil-name="DW Bar 1"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center"
+            >
+              <div
+                data-pencil-id="ikuUz"
+                data-pencil-name="DW Bar 1 L"
+                class="text-[11px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Sari
+              </div>
+              <div
+                data-pencil-id="pl9MO"
+                data-pencil-name="DW Bar 1 B"
+                class="box-border w-[60px] shrink-0 h-[16px] bg-[#FFD166] rounded-[8px]"
+              ></div>
+              <div
+                data-pencil-id="RsrRs"
+                data-pencil-name="DW Bar 1 V"
+                class="text-[11px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+              >
+                60%
+              </div>
+            </div>
+            <div
+              data-pencil-id="fgjgy"
+              data-pencil-name="DW Bar 2"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center"
+            >
+              <div
+                data-pencil-id="HF697"
+                data-pencil-name="DW Bar 2 L"
+                class="text-[11px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Raka
+              </div>
+              <div
+                data-pencil-id="nIRwy"
+                data-pencil-name="DW Bar 2 B"
+                class="box-border w-[92px] shrink-0 h-[16px] bg-[#7EC8A4] rounded-[8px]"
+              ></div>
+              <div
+                data-pencil-id="QIq24"
+                data-pencil-name="DW Bar 2 V"
+                class="text-[11px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+              >
+                92%
+              </div>
+            </div>
+            <div
+              data-pencil-id="GZ3xF"
+              data-pencil-name="DW Bar 3"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center"
+            >
+              <div
+                data-pencil-id="w1pfq"
+                data-pencil-name="DW Bar 3 L"
+                class="text-[11px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Dinda
+              </div>
+              <div
+                data-pencil-id="oBqRo"
+                data-pencil-name="DW Bar 3 B"
+                class="box-border w-[45px] shrink-0 h-[16px] bg-[#F4A261] rounded-[8px]"
+              ></div>
+              <div
+                data-pencil-id="hnzep"
+                data-pencil-name="DW Bar 3 V"
+                class="text-[11px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+              >
+                45%
+              </div>
+            </div>
+            <div
+              data-pencil-id="CI8ak"
+              data-pencil-name="DW Bar 4"
+              class="box-border w-full h-fit shrink-0 flex flex-row gap-[8px] justify-start items-center"
+            >
+              <div
+                data-pencil-id="S5Migq"
+                data-pencil-name="DW Bar 4 L"
+                class="text-[11px]/[normal] box-border text-[#A39D96] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-medium text-left [white-space:nowrap]"
+              >
+                Arif
+              </div>
+              <div
+                data-pencil-id="OGi04"
+                data-pencil-name="DW Bar 4 B"
+                class="box-border w-[78px] shrink-0 h-[16px] bg-[#7EC8A4] rounded-[8px]"
+              ></div>
+              <div
+                data-pencil-id="Xy8gQ"
+                data-pencil-name="DW Bar 4 V"
+                class="text-[11px]/[normal] box-border text-[#3D3A38] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-semibold text-left [white-space:nowrap]"
+              >
+                78%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
