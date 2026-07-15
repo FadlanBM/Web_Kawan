@@ -1,55 +1,78 @@
 // ============================================================
-// KAWAN — Storage Layer (async, via SQLite API routes)
-// Semua fungsi kini memanggil Next.js Route Handlers yang
-// menyimpan data ke SQLite via better-sqlite3 di server.
+// KAWAN — Storage Layer (Client-side LocalStorage)
+// Semua data profil dan aksesibilitas disimpan secara lokal
+// di browser user.
 // ============================================================
 import { ProfilSiswa, ProgresQuest, PengaturanAksesibilitas } from "@/app/types";
 
-// ---- Helpers ----
+// ---- Key Constants ----
+const PROFIL_STORAGE_KEY = "kawan_semua_profil";
+const AKSESIBILITAS_STORAGE_KEY = "kawan_aksesibilitas";
 
-async function apiFetch<T>(url: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(url, {
-    ...options,
-    headers: { "Content-Type": "application/json", ...options?.headers },
-  });
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`API error ${res.status}: ${text}`);
+// Helper helper untuk browser storage
+function getLocalStorageItem<T>(key: string, defaultValue: T): T {
+  if (typeof window === "undefined") return defaultValue;
+  try {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : defaultValue;
+  } catch (err) {
+    console.error(`Error reading ${key} from localStorage:`, err);
+    return defaultValue;
   }
-  return res.json() as Promise<T>;
+}
+
+function setLocalStorageItem<T>(key: string, value: T): void {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (err) {
+    console.error(`Error writing ${key} to localStorage:`, err);
+  }
 }
 
 // ---- Profil ----
 
 export async function getAllProfil(): Promise<ProfilSiswa[]> {
-  return apiFetch<ProfilSiswa[]>("/api/profil");
+  return getLocalStorageItem<ProfilSiswa[]>(PROFIL_STORAGE_KEY, []);
 }
 
 export async function getProfilById(id: string): Promise<ProfilSiswa | null> {
-  try {
-    return await apiFetch<ProfilSiswa>(`/api/profil/${id}`);
-  } catch {
-    return null;
-  }
+  const profils = await getAllProfil();
+  return profils.find((p) => p.id === id) || null;
 }
 
 export async function createProfil(nama: string, foto?: string): Promise<ProfilSiswa> {
-  return apiFetch<ProfilSiswa>("/api/profil", {
-    method: "POST",
-    body: JSON.stringify({ nama, foto }),
-  });
+  const profils = await getAllProfil();
+  const newProfil: ProfilSiswa = {
+    id: `profil-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+    nama,
+    foto: foto || undefined,
+    jalur: null,
+    tanggalMulai: new Date().toISOString(),
+    progres: {
+      quest1: null,
+      quest2: null,
+      quest3: null,
+      stiker: [],
+      totalBintang: 0,
+    },
+  };
+  
+  profils.push(newProfil);
+  setLocalStorageItem(PROFIL_STORAGE_KEY, profils);
+  return newProfil;
 }
 
 export async function saveProfil(profil: ProfilSiswa): Promise<ProfilSiswa> {
-  return apiFetch<ProfilSiswa>(`/api/profil/${profil.id}`, {
-    method: "PUT",
-    body: JSON.stringify({
-      nama: profil.nama,
-      foto: profil.foto,
-      jalur: profil.jalur,
-      progres: profil.progres,
-    }),
-  });
+  const profils = await getAllProfil();
+  const index = profils.findIndex((p) => p.id === profil.id);
+  if (index !== -1) {
+    profils[index] = profil;
+  } else {
+    profils.push(profil);
+  }
+  setLocalStorageItem(PROFIL_STORAGE_KEY, profils);
+  return profil;
 }
 
 export async function updateProgresQuest(
@@ -57,72 +80,92 @@ export async function updateProgresQuest(
   questId: 1 | 2 | 3,
   progres: ProgresQuest
 ): Promise<ProfilSiswa | null> {
-  try {
-    return await apiFetch<ProfilSiswa>(`/api/profil/${profilId}`, {
-      method: "PUT",
-      body: JSON.stringify({ questId, progresQuest: progres }),
-    });
-  } catch {
-    return null;
-  }
+  const profil = await getProfilById(profilId);
+  if (!profil) return null;
+
+  const key = `quest${questId}` as "quest1" | "quest2" | "quest3";
+  
+  // Hitung total bintang baru
+  const q1Bintang = key === "quest1" ? progres.bintang : profil.progres.quest1?.bintang ?? 0;
+  const q2Bintang = key === "quest2" ? progres.bintang : profil.progres.quest2?.bintang ?? 0;
+  const q3Bintang = key === "quest3" ? progres.bintang : profil.progres.quest3?.bintang ?? 0;
+  const totalBintang = q1Bintang + q2Bintang + q3Bintang;
+
+  const updatedProfil: ProfilSiswa = {
+    ...profil,
+    progres: {
+      ...profil.progres,
+      [key]: progres,
+      totalBintang,
+    },
+  };
+
+  return saveProfil(updatedProfil);
 }
 
 export async function tambahStiker(profilId: string, stikerId: string): Promise<ProfilSiswa | null> {
-  try {
-    return await apiFetch<ProfilSiswa>(`/api/profil/${profilId}`, {
-      method: "PUT",
-      body: JSON.stringify({ tambahStiker: stikerId }),
-    });
-  } catch {
-    return null;
-  }
+  const profil = await getProfilById(profilId);
+  if (!profil) return null;
+
+  if (profil.progres.stiker.includes(stikerId)) return profil;
+
+  const updatedProfil: ProfilSiswa = {
+    ...profil,
+    progres: {
+      ...profil.progres,
+      stiker: [...profil.progres.stiker, stikerId],
+    },
+  };
+
+  return saveProfil(updatedProfil);
 }
 
 export async function resetProgres(profilId: string): Promise<ProfilSiswa | null> {
-  try {
-    return await apiFetch<ProfilSiswa>(`/api/profil/${profilId}`, {
-      method: "PUT",
-      body: JSON.stringify({ resetProgres: true }),
-    });
-  } catch {
-    return null;
-  }
+  const profil = await getProfilById(profilId);
+  if (!profil) return null;
+
+  const updatedProfil: ProfilSiswa = {
+    ...profil,
+    jalur: null,
+    progres: {
+      quest1: null,
+      quest2: null,
+      quest3: null,
+      stiker: [],
+      totalBintang: 0,
+    },
+  };
+
+  return saveProfil(updatedProfil);
 }
 
 export async function deleteProfil(profilId: string): Promise<boolean> {
-  try {
-    await apiFetch<{ success: boolean }>(`/api/profil/${profilId}`, {
-      method: "DELETE",
-    });
-    return true;
-  } catch {
-    return false;
-  }
+  const profils = await getAllProfil();
+  const filtered = profils.filter((p) => p.id !== profilId);
+  setLocalStorageItem(PROFIL_STORAGE_KEY, filtered);
+  return true;
 }
 
 // ---- Aksesibilitas ----
 
+const DEFAULT_AKSESIBILITAS: PengaturanAksesibilitas = {
+  volume: 0.7,
+  ukuranTeks: "normal",
+  kecepatanNarasi: 1,
+  animasiDinonaktifkan: false,
+};
+
 export async function getAksesibilitas(): Promise<PengaturanAksesibilitas> {
-  try {
-    return await apiFetch<PengaturanAksesibilitas>("/api/aksesibilitas");
-  } catch {
-    // Fallback ke default jika server belum siap
-    return {
-      volume: 0.7,
-      ukuranTeks: "normal",
-      kecepatanNarasi: 1,
-      animasiDinonaktifkan: false,
-    };
-  }
+  return getLocalStorageItem<PengaturanAksesibilitas>(AKSESIBILITAS_STORAGE_KEY, DEFAULT_AKSESIBILITAS);
 }
 
 export async function saveAksesibilitas(
   pengaturan: Partial<PengaturanAksesibilitas>
 ): Promise<PengaturanAksesibilitas> {
-  return apiFetch<PengaturanAksesibilitas>("/api/aksesibilitas", {
-    method: "PUT",
-    body: JSON.stringify(pengaturan),
-  });
+  const current = await getAksesibilitas();
+  const updated = { ...current, ...pengaturan };
+  setLocalStorageItem(AKSESIBILITAS_STORAGE_KEY, updated);
+  return updated;
 }
 
 // ---- Profil Aktif (session — tetap di sessionStorage) ----
